@@ -1,0 +1,26 @@
+{
+  "name": "AI Content Summarizer (Articles & Videos)",
+  "version": "1.0",
+  "description": "Summarize articles on any site & YouTube transcripts using an AI model.",
+  "manifest_version": 3,
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
